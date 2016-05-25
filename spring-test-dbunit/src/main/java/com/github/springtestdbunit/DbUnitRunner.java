@@ -291,8 +291,8 @@ public class DbUnitRunner {
 		private List<T> getAnnotations(AnnotatedElement element, Class<? extends Annotation> container,
 				Class<T> annotation) {
 			List<T> annotations = new ArrayList<T>();
-			addAnnotationToList(annotations, AnnotationUtils.findAnnotation(element, annotation));
-			addRepeatableAnnotationsToList(annotations, AnnotationUtils.findAnnotation(element, container));
+            addAnnotationToList(annotations, AnnotationUtils.getAnnotation(element, annotation));
+            addRepeatableAnnotationsToList(annotations, AnnotationUtils.getAnnotation(element, container));
 			return Collections.unmodifiableList(annotations);
 		}
 
